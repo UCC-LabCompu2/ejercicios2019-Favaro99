@@ -3,17 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <title>Ejercicio Columnas</title>
+    <style>
+        body{
+            font-family: cursive;
+        }
+        #TituloPrincipal{
+            color: firebrick;
+        }
+        .tituloNoticia {
+            font-size: 16px;
+        }
+        a:link, a:visited{
+            color: aqua;
+        }
+        a:hover{
+            font-size: 20px;
+        }
+        a:active{
+            font-weight: bold;
+        }
+    </style>
 </head>
+<a href="ej_leyes.html" target="_blank">Leyes</a>
 <body>
 <!--Cree los estilos CSS necesarios para que el texto se visualice en 2 columnas-->
 <header>
-    <h1>Diario On-line</h1>
+    <h1 id="TituloPrincipal">Diario On-line</h1>
 </header>
 
 <section>
-    <h3>CordoBici</h3>
+    <h3 class="tituloNoticia">CordoBici</h3>
     Publicado el 07/03/2018 en Agropecuarias y Ambiente
     <article>
+        <div>
         <p>
             Un intercambio académico inspiró a Joaquín, Nicolás, Guido y Facundo para elegir el tema de su trabajo final.
             Dos de ellos estuvieron el año pasado en Sevilla y se quedaron "enamorados" –palabras textuales- de su
@@ -27,7 +49,7 @@
             interesada en implementar.
         </p>
 
-        <h5>Investigación innovadora</h5>
+        <h5 class="tituloNoticia">Investigación innovadora</h5>
 
         <p>
             El sistema de bicicletas compartidas no es nuevo, ya funciona en muchos lugares del mundo. En nuestro país

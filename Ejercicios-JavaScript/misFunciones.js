@@ -54,7 +54,7 @@ function div(){
     document.opeMat.div_total.value= Number(document.opeMat.div_num1.value) / Number(document.opeMat.div_num2.value);
 }
 
-//Grado -> Radianes
+//Grado <-> Radianes
 function conv_Grados_Rad(id_elem, valor){
     if(id_elem=="grados"){
         document.getElementById("radianes").value = valor*Math.PI/180;
@@ -72,4 +72,60 @@ function mostrar_ocultar(id_elem) {
     if(id_elem=="mostrarDiv"){
         document.getElementById("unDiv").style.display = 'block';
     }
+}
+
+//Canvas Circulo-Cuadrado
+function dibujarCircCuad(){
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+
+    ctx.fillStyle = "#1854ac";
+    ctx.beginPath();
+    ctx.rect(0,0,30,40);
+    ctx.fill();
+    ctx.closePath();
+
+    ctx.fillStyle = "#af3679";
+    ctx.beginPath();
+    ctx.arc(canvas.width/2,canvas.height/2,30,0,2*Math.PI);
+    ctx.fill(); // Es cuando tenemos relleno
+    ctx.closePath();
+}
+
+//Canvas cuadriculado
+function dibujarCuadriculado() {
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+
+    ctx.clearRect(0,0,canvas.width,canvas.height); //Para que no se sigan poniendo elementos
+
+    ctx.fillStyle = "#000";
+
+    ctx.beginPath();
+
+    for(var i=10;i<canvas.width;i+=10){
+        ctx.moveTo(i,0);
+        ctx.lineTo(i,canvas.height);
+    }
+    for(var i=10;i<canvas.height;i+=10){
+        ctx.moveTo(0,i);
+        ctx.lineTo(canvas.width,i);
+    }
+
+    ctx.stroke(); //Es para dibujar lineas
+    ctx.closePath();
+}
+
+//Canvas x<->y
+function dibujarImg() {
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+
+    var img= new Image();
+    img.src = "images/auto.png";
+
+    img.onload = function(){ //Para que no se borre al soltar el click
+        ctx.drawImage(img,50,50);
+    }
+
 }
